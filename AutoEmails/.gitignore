@@ -1,3 +1,3 @@
-.env
-*.log
-credentials.json
+AutoEmails/.env
+AutoEmails/*.log
+AutoEmails/credentials.json
