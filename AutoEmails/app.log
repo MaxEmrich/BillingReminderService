@@ -1,0 +1,41 @@
+2024-08-26 18:43:24,885 - INFO - August
+2024-08-26 18:43:24,890 - INFO - Month status is unchanged: currently August
+2024-08-26 18:43:24,891 - INFO - Current worksheet number is... 1
+2024-08-26 18:43:24,900 - DEBUG - Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None)
+2024-08-26 18:43:24,930 - DEBUG - Making request: POST https://oauth2.googleapis.com/token
+2024-08-26 18:43:24,932 - DEBUG - Starting new HTTPS connection (1): oauth2.googleapis.com:443
+2024-08-26 18:43:25,024 - DEBUG - https://oauth2.googleapis.com:443 "POST /token HTTP/11" 200 None
+2024-08-26 18:43:25,026 - DEBUG - Starting new HTTPS connection (1): www.googleapis.com:443
+2024-08-26 18:43:25,398 - DEBUG - https://www.googleapis.com:443 "GET /drive/v3/files?q=mimeType%3D%22application%2Fvnd.google-apps.spreadsheet%22+and+name+%3D+%22%28House%29+Green+Circle+Payment+Tracking+%22&pageSize=1000&supportsAllDrives=True&includeItemsFromAllDrives=True&fields=kind%2CnextPageToken%2Cfiles%28id%2Cname%2CcreatedTime%2CmodifiedTime%29 HTTP/11" 200 None
+2024-08-26 18:43:25,404 - DEBUG - Starting new HTTPS connection (1): sheets.googleapis.com:443
+2024-08-26 18:43:25,822 - DEBUG - https://sheets.googleapis.com:443 "GET /v4/spreadsheets/1rwkfL0y121uiTTu60UfP2SyzvN9ws2pHP7xnvHSHwmM?includeGridData=false HTTP/11" 200 None
+2024-08-26 18:43:25,958 - DEBUG - https://sheets.googleapis.com:443 "GET /v4/spreadsheets/1rwkfL0y121uiTTu60UfP2SyzvN9ws2pHP7xnvHSHwmM?includeGridData=false HTTP/11" 200 None
+2024-08-26 18:43:25,958 - INFO - Data successfully retrieved!
+2024-08-26 18:43:26,118 - DEBUG - https://sheets.googleapis.com:443 "GET /v4/spreadsheets/1rwkfL0y121uiTTu60UfP2SyzvN9ws2pHP7xnvHSHwmM/values/%2708%2F2024%27 HTTP/11" 200 None
+2024-08-26 18:43:26,136 - INFO - initialized tenet Maddie for this month's bill...
+2024-08-26 18:43:26,279 - DEBUG - https://sheets.googleapis.com:443 "GET /v4/spreadsheets/1rwkfL0y121uiTTu60UfP2SyzvN9ws2pHP7xnvHSHwmM/values/%2708%2F2024%27%21A4%3A4 HTTP/11" 200 None
+2024-08-26 18:43:26,421 - DEBUG - https://sheets.googleapis.com:443 "GET /v4/spreadsheets/1rwkfL0y121uiTTu60UfP2SyzvN9ws2pHP7xnvHSHwmM/values/%2708%2F2024%27%21A4%3A4 HTTP/11" 200 None
+2024-08-26 18:43:26,422 - INFO - initialized tenet Max for this month's bill...
+2024-08-26 18:43:26,568 - DEBUG - https://sheets.googleapis.com:443 "GET /v4/spreadsheets/1rwkfL0y121uiTTu60UfP2SyzvN9ws2pHP7xnvHSHwmM/values/%2708%2F2024%27%21A3%3A3 HTTP/11" 200 None
+2024-08-26 18:43:26,713 - DEBUG - https://sheets.googleapis.com:443 "GET /v4/spreadsheets/1rwkfL0y121uiTTu60UfP2SyzvN9ws2pHP7xnvHSHwmM/values/%2708%2F2024%27%21A3%3A3 HTTP/11" 200 None
+2024-08-26 18:43:26,713 - INFO - initialized tenet Ethan for this month's bill...
+2024-08-26 18:43:26,857 - DEBUG - https://sheets.googleapis.com:443 "GET /v4/spreadsheets/1rwkfL0y121uiTTu60UfP2SyzvN9ws2pHP7xnvHSHwmM/values/%2708%2F2024%27%21A8%3A8 HTTP/11" 200 None
+2024-08-26 18:43:26,999 - DEBUG - https://sheets.googleapis.com:443 "GET /v4/spreadsheets/1rwkfL0y121uiTTu60UfP2SyzvN9ws2pHP7xnvHSHwmM/values/%2708%2F2024%27%21A8%3A8 HTTP/11" 200 None
+2024-08-26 18:43:26,999 - INFO - initialized tenet Graham for this month's bill...
+2024-08-26 18:43:27,137 - DEBUG - https://sheets.googleapis.com:443 "GET /v4/spreadsheets/1rwkfL0y121uiTTu60UfP2SyzvN9ws2pHP7xnvHSHwmM/values/%2708%2F2024%27%21A5%3A5 HTTP/11" 200 None
+2024-08-26 18:43:27,271 - DEBUG - https://sheets.googleapis.com:443 "GET /v4/spreadsheets/1rwkfL0y121uiTTu60UfP2SyzvN9ws2pHP7xnvHSHwmM/values/%2708%2F2024%27%21A5%3A5 HTTP/11" 200 None
+2024-08-26 18:43:27,271 - INFO - initialized tenet Jake for this month's bill...
+2024-08-26 18:43:27,415 - DEBUG - https://sheets.googleapis.com:443 "GET /v4/spreadsheets/1rwkfL0y121uiTTu60UfP2SyzvN9ws2pHP7xnvHSHwmM/values/%2708%2F2024%27%21A7%3A7 HTTP/11" 200 None
+2024-08-26 18:43:27,556 - DEBUG - https://sheets.googleapis.com:443 "GET /v4/spreadsheets/1rwkfL0y121uiTTu60UfP2SyzvN9ws2pHP7xnvHSHwmM/values/%2708%2F2024%27%21A7%3A7 HTTP/11" 200 None
+2024-08-26 18:43:27,556 - INFO - initialized tenet Nico for this month's bill...
+2024-08-26 18:43:27,698 - DEBUG - https://sheets.googleapis.com:443 "GET /v4/spreadsheets/1rwkfL0y121uiTTu60UfP2SyzvN9ws2pHP7xnvHSHwmM/values/%2708%2F2024%27%21A6%3A6 HTTP/11" 200 None
+2024-08-26 18:43:27,840 - DEBUG - https://sheets.googleapis.com:443 "GET /v4/spreadsheets/1rwkfL0y121uiTTu60UfP2SyzvN9ws2pHP7xnvHSHwmM/values/%2708%2F2024%27%21A6%3A6 HTTP/11" 200 None
+2024-08-26 18:43:27,840 - INFO - |Reminder| 
+
+The following bill(s) are due --->
+
+No bills to display.
+
+From,
+Max Emrich (AKA TwizMaster100, AKA White-Lightning, AKA GreenCircleGuy)
+2024-08-26 18:43:28,726 - INFO - Email sent to: Max
