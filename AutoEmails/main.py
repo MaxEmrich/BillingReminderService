@@ -95,7 +95,7 @@ scope = [
     "https://www.googleapis.com/auth/spreadsheets",
     "https://www.googleapis.com/auth/drive"
 ]
-creds = ServiceAccountCredentials.from_json_keyfile_name("C:/Users/Max Emrich/PythonProjects/BillingReminderService/AutoEmails/credentials.json", scope)
+creds = ServiceAccountCredentials.from_json_keyfile_name("C:/Users/maxfi/PythonProjects/BillingReminderService/AutoEmails/credentials.json", scope)
 client = None
 
 def connect_and_fetch_data():
@@ -427,10 +427,10 @@ send_email(n_max, email_password, ssl_context=ssl_context, email_body=email_body
 
 # Check date to see we if we need to send an email today, then send it
 
-# if check_date == True:
-#     for patron in patron_structs:
-#         f_strings = patron.make_fstrings() # Make formatted strings
-#         email_body = get_email_body(patron) # Make an email body from those strings 
-#         send_email(patron, email_password, ssl_context=ssl_context, email_body=email_body) # Creat an email object and send it to tenets
+if check_date == True:
+    for patron in patron_structs:
+        f_strings = patron.make_fstrings() # Make formatted strings
+        email_body = get_email_body(patron) # Make an email body from those strings 
+        send_email(patron, email_password, ssl_context=ssl_context, email_body=email_body) # Creat an email object and send it to tenets
 
 # --------------------------------------------------------------------
