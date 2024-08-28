@@ -95,7 +95,7 @@ scope = [
     "https://www.googleapis.com/auth/spreadsheets",
     "https://www.googleapis.com/auth/drive"
 ]
-creds = ServiceAccountCredentials.from_json_keyfile_name("C:/Users/Max Emrich/PythonProjects/AutoEmails/credentials.json", scope)
+creds = ServiceAccountCredentials.from_json_keyfile_name("C:/Users/Max Emrich/PythonProjects/BillingReminderService/AutoEmails/credentials.json", scope)
 client = None
 
 def connect_and_fetch_data():
