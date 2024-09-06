@@ -121,6 +121,7 @@ def connect_and_fetch_data():
 worksheet = connect_and_fetch_data()
 column_index = None
 all_values = worksheet.get_all_values()
+print(all_values)
 
 # --------------------------------------------------------------------
 
@@ -298,6 +299,7 @@ class Patron:
             self.due_dates["Rent"] = row_values[BillColumns.RENT_DATE_DUE.value - 1]
             self.bill_amounts["Rent"] = row_values[BillColumns.RENT_AMNT_DUE.value - 1]
 
+
         except gspread.exceptions.APIError as e:
             print(f"API Error: {e}")
 
@@ -317,7 +319,7 @@ class Patron:
             else:
                 self.paid_status[bill_type] = False
         
-        if num_bills_paid == 0:
+        if num_bills_paid == 5:
             self.all_bills_paid = True
         
         
@@ -329,32 +331,31 @@ class Patron:
             if self.paid_status[bill_type] == False:  # Identifying unpaid bills
                 unpaid_bills.append(bill_type)
         
-        formatted_strings = []
+        self.formatted_strings = []
         for item in unpaid_bills:
             if item == "Water":
                 ammount_due = self.bill_amounts["Water"]
                 due_date = self.due_dates["Water"]
-                formatted_strings.append(f"Bill: Water\n Amount Due: {ammount_due}, Due Date: {due_date}")
+                self.formatted_strings.append(f"Bill: Water\n Amount Due: {ammount_due}, Due Date: {due_date}")
             elif item == "Trash":
                 ammount_due = self.bill_amounts["Trash"]
                 due_date = self.due_dates["Trash"]
-                formatted_strings.append(f"Bill: Trash\n Amount Due: {ammount_due}, Due Date: {due_date}")
+                self.formatted_strings.append(f"Bill: Trash\n Amount Due: {ammount_due}, Due Date: {due_date}")
             elif item == "Electric":
                 ammount_due = self.bill_amounts["Electric"]
                 due_date = self.due_dates["Electric"]
-                formatted_strings.append(f"Bill: Electric\n Amount Due: {ammount_due}, Due Date: {due_date}")
+                self.formatted_strings.append(f"Bill: Electric\n Amount Due: {ammount_due}, Due Date: {due_date}")
             elif item == "Internet":
                 ammount_due = self.bill_amounts["Internet"]
                 due_date = self.due_dates["Internet"]
-                formatted_strings.append(f"Bill: Internet\n Amount Due: {ammount_due}, Due Date: {due_date}")
+                self.formatted_strings.append(f"Bill: Internet\n Amount Due: {ammount_due}, Due Date: {due_date}")
             elif item == "Rent":
                 ammount_due = self.bill_amounts["Rent"]
                 due_date = self.due_dates["Rent"]
-                formatted_strings.append(f"Bill: Rent\n Amount Due: {ammount_due}, Due Date: {due_date}")
+                self.formatted_strings.append(f"Bill: Rent\n Amount Due: {ammount_due}, Due Date: {due_date}")
             else:
                 print(f"No bills due for tenet: {self.name}")
-        
-        return formatted_strings
+    
 
 n_maddie = Patron(name="Maddie", row_num=4, patron_email=email_receive_list["Maddie"])
 n_max = Patron(name="Max", row_num=3, patron_email=email_receive_list["Max"])
@@ -421,7 +422,7 @@ def check_date(current_day: str) -> bool: # Returns True if the current day matc
 
 # --------------------------------------------------------------------
 
-f_strings = n_max.make_fstrings() # Make formatted strings
+n_max.make_fstrings() # Make formatted strings
 email_body = get_email_body(n_max) # Make an email body from those strings 
 send_email(n_max, email_password, ssl_context=ssl_context, email_body=email_body) # Creat an email object and send it to tenets
 
