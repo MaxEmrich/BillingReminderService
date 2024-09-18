@@ -42,10 +42,11 @@ sys.stdout = LogWriter() # Redirect print statements to the log file
 first_e = 15
 second_e = 20
 thrid_e = 25
+test_e = 18
 
 full_date = datetime.now()
 
-days_to_send = {"First email": first_e, "Second Email": second_e, "Third Email": thrid_e} # Send emails on the 15th, 20th, and 25th 
+days_to_send = {"First email": first_e, "Second Email": second_e, "Third Email": thrid_e, "Test Email": test_e} # Send emails on the 15th, 20th, and 25th 
 day_of_month = full_date.day
 current_month_name = full_date.strftime("%B")
 print(current_month_name)
@@ -414,11 +415,11 @@ def check_date(current_day: str) -> bool: # Returns True if the current day matc
     if type(current_day) != str:
         print(ValueError)
 
-    for day in days_to_send.values:
+    for day in days_to_send.values():
         if current_day == str(day):
             return True
-        else:
-            return False
+
+    return False
 
 # --------------------------------------------------------------------
 
@@ -428,7 +429,7 @@ send_email(n_max, email_password, ssl_context=ssl_context, email_body=email_body
 
 # Check date to see we if we need to send an email today, then send it
 
-if check_date == True:
+if check_date(str(day_of_month)) == True: 
     for patron in patron_structs:
         f_strings = patron.make_fstrings() # Make formatted strings
         email_body = get_email_body(patron) # Make an email body from those strings 
