@@ -12,7 +12,7 @@ I set a **`Patron`** (AKA anyone who is paying bills) class that reads, parses, 
 A simple email body is then constructed based on the **`Patron's`** paid status for each bill.
 
 ## Scheduling 
-This script is now in my Windows Task Scheduler, where I have the trigger(s) set to be every day at 8:00am. At this time every day, the program will run, check the month and day against the json file I have set up to count the months, and if the conditions are met (the day and month are correct) to send the emails, the emails will be sent to each tenent based on their bill statuses.
+This script is now in my Windows Task Scheduler, where I have the trigger(s) set to be every day at 8:00am. At this time every day, the program will run, check the month and day against the json file I have set up to count the months, and if the conditions are met (the day and month are correct) to send the emails, the emails will be sent to each tenant based on their bill statuses.
 
 ## Notes
 There is a lot of verbose code in this file, especially in the "Extracting Data" section of the get_gsinfo() method. This is because I was having trouble getting *gspread* to read the name of the index that was accessing the row data in a for-loop, so I opted to make the structure more clear for debugging purposes. 
